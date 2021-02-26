@@ -49,10 +49,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int i, Headers headers, JSON json) {
                 Log.d(TAG, "onSuccess");
-                JSONObject jsonObject = json.jsonObject;               //instantiate the json
-
+                JSONObject jsonObject = json.jsonObject;      
                 try {
-                    JSONArray results = jsonObject.getJSONArray( "results");            //gets the array with the name 'results'
+                    JSONArray results = jsonObject.getJSONArray( "results"); 
                     Log.i(TAG, "Results: " + results.toString());
 
                     movies.addAll(Movie.fromJsonArray(results));
